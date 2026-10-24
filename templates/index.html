@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Mô phỏng định lí giới hạn trung tâm">
+  <title>Mô phỏng CLT</title>
+  <link rel="stylesheet"
+        href="{{ url_for('static', path='/css/style.css') }}">
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <p class="eyebrow">LẬP TRÌNH PYTHON NÂNG CAO</p>
+      <h1>Định lí Giới hạn Trung tâm</h1>
+      <p>Quan sát phân phối của trung bình mẫu khi n tăng.</p>
+    </div>
+  </header>
+
+  <main class="container grid">
+    <section class="card video-card">
+      <h2>Video mô phỏng</h2>
+      <video controls playsinline preload="metadata"
+             aria-label="Video mô phỏng định lí giới hạn trung tâm">
+        <source
+          src="{{ url_for('static', path='/video/clt_simulation.mp4') }}"
+          type="video/mp4">
+        Trình duyệt của bạn không hỗ trợ video HTML5.
+      </video>
+    </section>
+
+    <aside class="card">
+      <h2>Cách quan sát</h2>
+      <ol>
+        <li>So sánh các kích thước mẫu n.</li>
+        <li>Quan sát histogram của trung bình mẫu.</li>
+        <li>Đánh giá xu hướng tiến về dạng chuông.</li>
+      </ol>
+    </aside>
+
+    <section class="card wide">
+      <h2>Ý tưởng toán học</h2>
+      <p>
+        Giả sử X<sub>1</sub>, …, X<sub>n</sub> độc lập, cùng phân phối, có kì vọng
+        μ và phương sai σ² &lt; ∞. Khi n lớn, đại lượng chuẩn hóa
+        Z<sub>n</sub> = (X̄<sub>n</sub> − μ) / (σ/√n) hội tụ theo phân phối về
+        N(0, 1).
+      </p>
+      <p>
+        Kịch bản mô phỏng: chọn một phân phối không chuẩn (ở đây là phân phối mũ),
+        lặp nhiều lần việc lấy mẫu kích thước n, tính trung bình mẫu, rồi vẽ
+        histogram của các trung bình. Khi n tăng, histogram tiến gần dạng chuông.
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Xây dựng bằng FastAPI · Triển khai trên Render</p>
+    </div>
+  </footer>
+</body>
+</html>
